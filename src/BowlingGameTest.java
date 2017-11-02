@@ -26,7 +26,7 @@ public class BowlingGameTest extends TestCase {
     rollSpare();
     g.roll(3);
     rollMany(17,0);
-    assertEquals(16,g.score());
+    assertEquals(16, g.score());
   }
 
   public void testOneStrike() throws Exception {
@@ -34,7 +34,12 @@ public class BowlingGameTest extends TestCase {
     g.roll(3);
     g.roll(4);
     rollMany(16,0);
-    assertEquals(24,g.score());
+    assertEquals(24, g.score());
+  }
+
+  public void testPerfectGame() throws Exception {
+    rollMany(12,10);
+    assertEquals(300, g.score());
   }
 
   private void rollStrike() {
